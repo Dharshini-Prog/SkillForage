@@ -1,3 +1,13 @@
 {
-  "name": "placeholder"
+  "skill_name": "{{skill_name}}",
+  "version": "1.0.0",
+  "author": "SkillForge",
+  "category": "{{category}}",
+  "created_at": "{{created_at}}",
+  "model": "gemini",
+  "status": "generated",
+  "tags": [
+    "{{tag1}}",
+    "{{tag2}}"
+  ]
 }

@@ -1,8 +1,33 @@
 # Skill Card
 
-* Skill Name: Placeholder
-* Version: Placeholder
-* Required Tools: Placeholder
-* Target SQI: Placeholder
-* Deployment Ready: Placeholder
-* Generation Timestamp: Placeholder
+## Skill Name
+
+{{skill_name}}
+
+## Category
+
+{{category}}
+
+## Description
+
+{{description}}
+
+## Inputs
+
+{{inputs}}
+
+## Outputs
+
+{{outputs}}
+
+## Recommended Model
+
+Google Gemini
+
+## Complexity
+
+{{complexity}}
+
+## Quality Score
+
+{{quality_score}}

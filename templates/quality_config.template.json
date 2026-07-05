@@ -1,7 +1,10 @@
 {
-  "target_sqi": "placeholder",
-  "grading_thresholds": "placeholder",
-  "deployment_ready_threshold": "placeholder",
-  "required_sections": "placeholder",
-  "validation_rules": "placeholder"
+  "minimum_score": 85,
+  "max_review_attempts": 3,
+  "require_examples": true,
+  "require_metadata": true,
+  "require_readme": true,
+  "require_skill_card": true,
+  "validate_markdown": true,
+  "validate_json": true
 }

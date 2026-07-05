@@ -1,5 +1,7 @@
 import os
 import time
+import zipfile
+import io
 import streamlit as st
 from agents.adk_root_agent import ADKRootAgent
 
@@ -159,6 +161,35 @@ def render_tabs(full_path, clean_path, score_line, status_line):
     
     with tab1:
         st.markdown("### Preview and Download")
+        
+        # Create ZIP download
+        skill_name = os.path.basename(os.path.normpath(full_path))
+        zip_name = f"{skill_name.replace(' ', '_')}.zip"
+        
+        zip_buffer = io.BytesIO()
+        missing_files = []
+        
+        with zipfile.ZipFile(zip_buffer, "w", zipfile.ZIP_DEFLATED) as zip_file:
+            for filename in files_to_check:
+                file_path = os.path.join(full_path, filename)
+                if os.path.exists(file_path):
+                    zip_file.write(file_path, arcname=filename)
+                else:
+                    missing_files.append(filename)
+                    
+        if missing_files:
+            st.warning(f"⚠️ Warning: The following files are missing and won't be in the ZIP: {', '.join(missing_files)}")
+            
+        st.download_button(
+            label="📦 Download Skill Package (.zip)",
+            data=zip_buffer.getvalue(),
+            file_name=zip_name,
+            mime="application/zip",
+            type="primary",
+            use_container_width=True
+        )
+        
+        st.markdown("#### Individual Files")
         cols = st.columns(3)
         
         for i, filename in enumerate(files_to_check):
