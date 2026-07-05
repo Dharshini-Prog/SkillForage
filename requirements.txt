@@ -1,6 +1,4 @@
 # SkillForge dependencies
 pydantic>=2.0.0
 python-dotenv
-google-adk==2.3.0
-google-genai
-streamlit
+google-adk
