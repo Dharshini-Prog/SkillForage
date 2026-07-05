@@ -3,6 +3,14 @@ import time
 import zipfile
 import io
 import streamlit as st
+from dotenv import load_dotenv
+
+# Ensure secrets are loaded before initializing agents
+load_dotenv()
+
+if "GOOGLE_API_KEY" in st.secrets:
+    os.environ["GOOGLE_API_KEY"] = st.secrets["GOOGLE_API_KEY"]
+
 from agents.adk_root_agent import ADKRootAgent
 
 # Constants
